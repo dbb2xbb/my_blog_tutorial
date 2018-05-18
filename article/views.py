@@ -16,6 +16,7 @@ def detail(request,id):
 		post = Article.objects.get(id=str(id))
 	except Article.DoesNotExsit:
 		raise Http404
+	
 	return render(request,'post.html',{'post':post})
 
 
