@@ -18,7 +18,22 @@ def detail(request,id):
 		raise Http404
 	
 	return render(request,'post.html',{'post':post})
+def archives(request):
+	try:
+		post_list = Article.objects.all()
+	except:
+		return Http404
+	return render(request,'archives.html',{'post_list':post_list,'error':False})
 
+def about_me(request):
+	return render(request,'aboutme.html')
+
+def cateClassify(request,category):
+	try:
+		post_list = Article.objects.filter(category = category)
+	except:
+		return Http404
+	return render(request,'cateClassify.html',{'post_list':post_list})
 
 def test(request):
 	return render(request,'test.html',{'current_time':datetime.now()})
