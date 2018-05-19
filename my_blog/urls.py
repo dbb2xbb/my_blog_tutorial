@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^archives/$',views.archives,name="archives"),
     url(r'^aboutme/$',views.about_me,name="about_me"),
     url(r'^cateClassify/(?P<category>\w+)/$',views.cateClassify,name="cateClassify"),
+    url(r'^search/$',views.search,name="search")
 ]
